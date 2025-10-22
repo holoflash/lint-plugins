@@ -1,0 +1,39 @@
+{
+  "name": "holoflash-lint-react-opinionated",
+  "version": "1.0.0",
+  "description": "Opinionated lint rules for React development using oxlint",
+  "main": "react-opinionated.js",
+  "type": "module",
+  "files": [
+    "react-opinionated.js",
+    "README.md"
+  ],
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "react",
+    "oxlint",
+    "linting",
+    "javascript",
+    "jsx"
+  ],
+  "author": "holoflash",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holoflash/lint-plugins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/holoflash/lint-plugins/issues"
+  },
+  "homepage": "https://github.com/holoflash/lint-plugins#readme",
+  "peerDependencies": {
+    "oxlint": ">=1.22.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
