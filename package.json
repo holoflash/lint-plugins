@@ -1,5 +1,5 @@
 {
-  "name": "holoflash-lint-react-opinionated",
+  "name": "holoflash-lint",
   "version": "1.0.0",
   "description": "Opinionated lint rules for React development using oxlint",
   "main": "react-opinionated.js",
@@ -27,7 +27,7 @@
     "url": "https://github.com/holoflash/lint-plugins/issues"
   },
   "homepage": "https://github.com/holoflash/lint-plugins#readme",
-  "peerDependencies": {
+  "dependencies": {
     "oxlint": ">=1.22.0"
   },
   "engines": {

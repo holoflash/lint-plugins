@@ -1,6 +1,10 @@
+# holoflash-lint-react-opinionated
+
+Opinionated oxlint plugin for React development.
+
 ## Installation
 
-First, make sure you have oxlint installed:
+First, install oxlint:
 
 ```bash
 npm install --save-dev oxlint
@@ -10,6 +14,31 @@ Then install this plugin:
 
 ```bash
 npm install --save-dev holoflash-lint-react-opinionated
+```
+
+## Usage
+
+Use this plugin with oxlint. Create an oxlint configuration file:
+
+### .oxlintrc.json
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "off",
+    "nursery": "off",
+    "pedantic": "off",
+    "perf": "off",
+    "restriction": "off",
+    "style": "off",
+    "suspicious": "off"
+  },
+  "jsPlugins": ["holoflash-lint"],
+  "rules": {
+    "holoflash-lint/prefer-function-declaration": "error"
+  }
+}
 ```
 
 ## Rules
@@ -37,3 +66,20 @@ function AnotherComponent() {
   return <span>Content</span>;
 }
 ```
+
+#### Rule Options
+
+This rule has no options.
+
+## Requirements
+
+- Node.js >= 16.0.0
+- oxlint >= 1.22.0
+
+## Contributing
+
+Issues and pull requests are welcome on the [GitHub repository](https://github.com/holoflash/lint-plugins).
+
+## License
+
+MIT

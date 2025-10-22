@@ -37,7 +37,7 @@ const preferFunctionDeclaration = defineRule({
 
 const plugin = {
     meta: {
-        name: "holoflash-lint-react-opinionated",
+        name: "holoflash-lint",
         version: "1.0.0",
     },
     rules: {
