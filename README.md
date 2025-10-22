@@ -13,7 +13,7 @@ npm install --save-dev oxlint
 Then install this plugin:
 
 ```bash
-npm install --save-dev holoflash-lint-react-opinionated
+npm install --save-dev holoflash-lint
 ```
 
 ## Usage
