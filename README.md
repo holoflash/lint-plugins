@@ -1,25 +1,18 @@
 # holoflash-lint
 
-Opinionated oxlint plugin for React/Preact development.
-Will be able to auto-fix soon!
+Opinionated oxlint plugin for React/Preact development with automatic fixes!
 
 ## Installation
-
-First, install oxlint:
-
-```bash
-npm install --save-dev oxlint
-```
-
-Then install this plugin:
 
 ```bash
 npm install --save-dev holoflash-lint
 ```
 
+The plugin will automatically configure your `.oxlintrc.json` file during installation. If the file doesn't exist, it will be created with the plugin configured. If it already exists, the plugin will be added to your existing configuration.
+
 ## Usage
 
-Add to your oxlint configuration:
+The configuration is added automatically during installation:
 
 ### .oxlintrc.json
 
@@ -27,16 +20,40 @@ Add to your oxlint configuration:
 {
   "jsPlugins": ["holoflash-lint"],
   "rules": {
-    "holoflash-lint/prefer-function-declaration": "error"
+    "holoflash-lint/prefer-function-declaration": "warn"
   }
 }
 ```
+
+### Running the linter
+
+```bash
+# Check for issues
+npx oxlint
+
+# Automatically fix issues (experimental)
+npx oxlint --fix
+```
+
+**⚠️ Note on auto-fixing:** The `--fix` feature is experimental and still being refined. While it works well in most cases, it may occasionally produce unexpected formatting or miss edge cases. Always review the changes after running `--fix` and consider running your code formatter afterward.
 
 ## Rules
 
 ### `prefer-function-declaration`
 
-Enforces the use of function declarations for React components instead of arrow functions.
+Enforces the use of function declarations for JSX components instead of arrow functions.
+
+#### Why use function declarations?
+
+Function declarations offer several practical benefits for component definitions:
+
+- **Better readability**: Function declarations are easier to distinguish from regular variables and other code
+- **Hoisting flexibility**: You can define functions after they're used, providing more organizational freedom
+- **Improved debugging**: Function names appear more clearly in error stack traces and React/Preact DevTools
+- **Explicit exports**: You can export the function on the same line (`export function MyComponent()`)
+- **Clear intent**: `function MyComponent()` clearly signals "this is a component" to other developers
+
+While this is partly a matter of style preference, this plugin helps use function declarations for components and reserving arrow functions for callbacks, event handlers, and inline functions creates a more consistent and maintainable codebase.
 
 **❌ Incorrect:**
 ```javascript
@@ -64,7 +81,7 @@ This rule has no options.
 
 ## Requirements
 
-- Node.js >= 16.0.0
+- Node.js >= 20.0.0
 - oxlint >= 1.22.0
 
 ## Contributing

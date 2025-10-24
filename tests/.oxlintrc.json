@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "off",
+    "nursery": "off",
+    "pedantic": "off",
+    "perf": "off",
+    "restriction": "off",
+    "style": "off",
+    "suspicious": "off"
+  },
+  "jsPlugins": ["holoflash-lint"],
+  "rules": {
+    "holoflash-lint/prefer-function-declaration": "warn"
+  }
+}
