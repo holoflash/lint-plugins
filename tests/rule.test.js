@@ -73,6 +73,12 @@ ruleTester.run("prefer-function-declaration", rule, {
             errors: [{ message: "Convert arrow function component 'MyComponent' to function declaration" }],
             output: "function MyComponent() {\n  return <><h1>Title</h1><p>Content</p></>;\n}",
         },
+        // TypeScript generic component
+        {
+            code: "const GenericComponent = <T,>(props: Props<T>) => <div>{props.value}</div>;",
+            errors: [{ message: "Convert arrow function component 'GenericComponent' to function declaration" }],
+            output: "function GenericComponent<T,>(props: Props<T>) {\n  return <div>{props.value}</div>;\n}",
+        },
     ],
 });
 

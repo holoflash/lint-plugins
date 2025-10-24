@@ -7,7 +7,7 @@ const preferFunctionDeclaration = defineRule({
             description: "Prefer function declarations over arrow functions for JSX components",
         },
         fixable: "code",
-        schema: [], // no options
+        schema: [],
     },
     createOnce(context) {
         return {
@@ -77,6 +77,17 @@ const preferFunctionDeclaration = defineRule({
                                     return sourceCode.getText(node);
                                 };
 
+                                // Extract type parameters if present (TypeScript generics)
+                                let typeParameters = '';
+
+                                if (node.typeParameters) {
+                                    const tpRange = getRange(node.typeParameters);
+                                    if (sourceCode.text) {
+                                        typeParameters = sourceCode.text.slice(tpRange[0], tpRange[1]);
+                                    } else {
+                                        typeParameters = sourceCode.getText(node.typeParameters);
+                                    }
+                                }
                                 // Get parameters as text
                                 const params = node.params.length > 0
                                     ? node.params.map(param => getText(param)).join(', ')
@@ -100,21 +111,21 @@ const preferFunctionDeclaration = defineRule({
                                 // Build function declaration
                                 let replacement;
                                 if (isDefaultExport) {
-                                    replacement = `export default function ${componentName}(${params}) ${bodyText}`;
+                                    replacement = `export default function ${componentName}${typeParameters}(${params}) ${bodyText}`;
                                     // Replace the entire export statement
                                     return fixer.replaceTextRange(
                                         getRange(variableDeclaration.parent),
                                         replacement
                                     );
                                 } else if (isExported) {
-                                    replacement = `export function ${componentName}(${params}) ${bodyText}`;
+                                    replacement = `export function ${componentName}${typeParameters}(${params}) ${bodyText}`;
                                     // Replace the entire export statement
                                     return fixer.replaceTextRange(
                                         getRange(variableDeclaration.parent),
                                         replacement
                                     );
                                 } else {
-                                    replacement = `function ${componentName}(${params}) ${bodyText}`;
+                                    replacement = `function ${componentName}${typeParameters}(${params}) ${bodyText}`;
                                     // Replace the entire variable declaration
                                     return fixer.replaceTextRange(
                                         getRange(variableDeclaration),

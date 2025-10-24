@@ -1,15 +1,15 @@
 {
   "name": "bun-react-template",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "install-local": "cd .. && npm pack && cd tests && npm install ../holoflash-lint-*.tgz",
-    "lint": "oxlint",
+    "lint": "oxlint --format=stylish",
     "test": "node rule.test.js"
   },
   "dependencies": {
-    "holoflash-lint": "file:../holoflash-lint-1.0.2.tgz",
+    "holoflash-lint": "file:../holoflash-lint-2.0.0.tgz",
     "react": "^19",
     "react-dom": "^19"
   },
