@@ -9,13 +9,12 @@
     "test": "node rule.test.js"
   },
   "dependencies": {
-    "holoflash-lint": "file:../holoflash-lint-2.0.0.tgz",
+    "holoflash-lint": "file:../holoflash-lint-2.1.0.tgz",
     "react": "^19",
     "react-dom": "^19"
   },
   "devDependencies": {
     "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9"
+    "@types/react-dom": "^19"
   }
 }

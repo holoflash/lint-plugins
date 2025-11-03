@@ -1,18 +1,16 @@
 # holoflash-lint
 
-Opinionated oxlint plugin for React/Preact development with automatic fixes!
+Opinionated oxlint plugin for React/Preact development.
 
 ## Installation
 
 ```bash
-npm install --save-dev holoflash-lint
+npm install --save-dev holoflash-lint oxlint
 ```
-
-The plugin will automatically configure your `.oxlintrc.json` file during installation. If the file doesn't exist, it will be created with the plugin configured. If it already exists, the plugin will be added to your existing configuration.
 
 ## Usage
 
-The configuration is added automatically during installation:
+Add the following to your .oxlintrc.json file:
 
 ### .oxlintrc.json
 
