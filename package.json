@@ -1,6 +1,6 @@
 {
   "name": "holoflash-lint",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Opinionated lint rules for React development using oxlint",
   "main": "react-opinionated.js",
   "type": "module",
